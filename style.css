@@ -1,11 +1,31 @@
-body {
-    background: #eeefed;
+:root {
+    --clr--neon: hsl(317 100% 54%);
+    --clr--bg: hsl(323 21% 16%);
+    --clr--neon2: hsl(241, 100%, 54%);
+    --clr--bg2: rgb(32, 32, 49);
+    --clr--neon3: hsl(121, 100%, 54%);
+    --clr--bg3: rgb(33, 49, 32);
+
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+    
+    /*body styles*/
+.body {
+    background: white;
+    display: grid;
+}
+
+/*text styles*/
 a {
     text-decoration: none;
 }
 
+/*logo styles*/
 .logo {
     display: block;
     margin-left: auto;
@@ -14,6 +34,7 @@ a {
     padding-top: 25px;
 }
 
+/*header styles*/
 h1 {
     position: relative;
     text-align: center;
@@ -22,6 +43,7 @@ h1 {
     font-family: "Calibri", sans-serif;
 }
 
+/*paragraph styles*/
 p {
     font-family: 'Lato', sans-serif;
     font-weight: 300;
@@ -34,7 +56,7 @@ p {
 .custom-btn {
     width: 130px;
     height: 40px;
-    color: #000;
+    color: black;
     border-radius: 5px;
     padding: 10px 25px;
     font-family: 'Lato', sans-serif;
@@ -51,4 +73,219 @@ p {
     outline: none;
 }
 
+
 /* Add your custom styles for btn-1, btn-2, and btn-3 */
+
+/*button styles*/
+
+.btn-1, .btn-2, .btn-3 {
+    transition: all 0.5s ease-in-out;
+}
+
+/*button 1 styling*/
+    
+.btn-1 {
+    font-size: 0.8rem;
+
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--clr--neon);
+    border: var(--clr--neon) 0.125em solid;
+    padding: 0.25em 1em;
+    border-radius: 25em;
+    width: 130px;
+    height: 40px;
+    display: block;
+    margin: 0 auto 20px;
+    text-shadow: 
+    0 0 0.125em rgb(1, 1, 1), 0 0 0.5em currentColor;
+    padding: 10px 25px;
+    font-family: "Balsamiq Sans", cursive;
+    font-weight: 500;
+    box-shadow: 0 0 0.5em 0 var(--clr--neon)
+    position: relative;
+    transition: background-color 100ms linear;
+}
+
+.btn-1::before {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    background: var(--clr--neon);
+    top: 70%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    transform: perspective(2em) rotateX(40deg) scale(1, 0.35);
+    filter: blur(1.5em);
+    opacity: 0.8;
+}
+
+.btn-1::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 2em 0.5em var(--clr--neon);
+    opacity: 0;
+    transition: opacity 50ms linear;
+}
+
+.btn-1:hover,
+.btn-1:focus {
+    background: var(--clr--neon);
+    color: var(--clr--bg);
+    text-shadow: none;
+}
+
+.btn-1::before,
+.btn-1:focus::before {
+    opacity: 1
+}
+
+.btn-1:hover:after,
+.btn-1:focus::after {
+    opacity: 1;
+}
+
+/*button 2 styling*/
+.btn-2 {
+    font-size: 0.8rem;
+
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--clr--neon2);
+    border: var(--clr--neon2) 0.125em solid;
+    padding: 0.25em 1em;
+    border-radius: 25em;
+    width: 130px;
+    height: 40px;
+    display: block;
+    margin: 0 auto 20px;
+    text-shadow: 
+    0 0 0.125em rgb(1, 1, 1), 0 0 0.5em currentColor;
+    padding: 10px 25px;
+    font-family: "Balsamiq Sans", cursive;
+    font-weight: 500;
+    box-shadow: 0 0 0.5em 0 var(--clr--neon2)
+    position: relative;
+    transition: background-color 100ms linear;
+}
+
+.btn-2::before {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    background: var(--clr--neon2);
+    top: 70%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    transform: perspective(2em) rotateX(40deg) scale(1, 0.35);
+    filter: blur(1.5em);
+    opacity: 0.7;
+}
+
+.btn-2::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 2em 0.5em var(--clr--neon2);
+    opacity: 0;
+    transition: opacity 100ms linear;
+}
+
+.btn-2:hover,
+.btn-2:focus {
+    background: var(--clr--neon2);
+    color: var(--clr--bg2);
+    text-shadow: none;
+}
+
+.btn-2::before,
+.btn-2:focus::before {
+    opacity: 1
+}
+
+.btn-2:hover:after,
+.btn-2:focus::after {
+    opacity: 1;
+}
+
+/*button 3 styling*/
+.btn-3 {
+    font-size: 0.8rem;
+
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--clr--neon3);
+    border: var(--clr--neon3) 0.125em solid;
+    padding: 0.25em 1em;
+    border-radius: 25em;
+    width: 130px;
+    height: 40px;
+    display: block;
+    margin: 0 auto 20px;
+    text-shadow: 
+    0 0 0.125em rgb(1, 1, 1), 0 0 0.5em currentColor;
+    padding: 10px 25px;
+    font-family: "Balsamiq Sans", cursive;
+    font-weight: 500;
+    box-shadow: 0 0 0.5em 0 var(--clr--neon3)
+    position: relative;
+    transition: background-color 100ms linear;
+}
+
+.btn-3::before {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    background: var(--clr--neon3);
+    top: 70%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+    filter: blur(2em);
+    opacity: 0.7;
+}
+
+.btn-3::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 2em 0.5em var(--clr--neon3);
+    opacity: 0;
+    transition: opacity 100ms linear;
+}
+
+.btn-3:hover,
+.btn-3:focus {
+    background: var(--clr--neon3);
+    color: var(--clr--bg3);
+    text-shadow: none;
+}
+
+.btn-3::before,
+.btn-3:focus::before {
+    opacity: 1
+}
+
+.btn-3:hover:after,
+.btn-3:focus::after {
+    opacity: 1;
+}
